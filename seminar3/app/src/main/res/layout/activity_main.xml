@@ -16,8 +16,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Indtroducei numele"
+        android:inputType="text"
+        />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esti student?"
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apasa"/>
+        android:text="Apasa"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
