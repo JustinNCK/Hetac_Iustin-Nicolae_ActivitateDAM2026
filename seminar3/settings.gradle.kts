@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "seminar3"
 include(":app")
- 
+include(":laborator")

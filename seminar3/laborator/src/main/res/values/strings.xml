@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Laborator</string>
+    <string-array name="culori">
+        <item>Rosu</item>
+        <item>Verde</item>
+        <item>Albastru</item>
+    </string-array>
+</resources>
