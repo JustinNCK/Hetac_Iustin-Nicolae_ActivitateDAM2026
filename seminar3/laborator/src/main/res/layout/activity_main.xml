@@ -20,4 +20,10 @@
         android:text="Adauga vehicul"
         android:onClick="deschideActivitate" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adauga vehicul (Design AI)"
+        android:onClick="deschideActivitateAI" />
+
 </LinearLayout>

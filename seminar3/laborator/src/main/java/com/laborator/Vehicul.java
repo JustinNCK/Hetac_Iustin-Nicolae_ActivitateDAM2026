@@ -7,7 +7,7 @@ public class Vehicul {
     public String toString() {
         return "Vehicul{" +
                 "marca='" + marca + '\'' +
-                ", esteElectriv=" + esteElectriv +
+                ", esteElectric=" + esteElectric +
                 ", combustibil='" + combustibil + '\'' +
                 ", culoare='" + culoare + '\'' +
                 ", siguranta=" + siguranta +
@@ -16,7 +16,7 @@ public class Vehicul {
     }
 
     private String marca;
-    private Boolean esteElectriv;
+    private Boolean esteElectric;
     private String combustibil;
     private String culoare;
     private Integer siguranta;
@@ -30,12 +30,12 @@ public class Vehicul {
         this.marca = marca;
     }
 
-    public Boolean getEsteElectriv() {
-        return esteElectriv;
+    public Boolean getEsteElectric() {
+        return esteElectric;
     }
 
-    public void setEsteElectriv(Boolean esteElectriv) {
-        this.esteElectriv = esteElectriv;
+    public void setEsteElectric(Boolean esteElectric) {
+        this.esteElectric = esteElectric;
     }
 
     public String getCombustibil() {
@@ -70,9 +70,9 @@ public class Vehicul {
         this.esteInmatriculat = esteInmatriculat;
     }
 
-    public Vehicul(String marca, Boolean esteElectriv, String combustibil, String culoare, Integer siguranta, Boolean esteInmatriculat) {
+    public Vehicul(String marca, Boolean esteElectric, String combustibil, String culoare, Integer siguranta, Boolean esteInmatriculat) {
         this.marca = marca;
-        this.esteElectriv = esteElectriv;
+        this.esteElectric = esteElectric;
         this.combustibil = combustibil;
         this.culoare = culoare;
         this.siguranta = siguranta;

@@ -22,6 +22,10 @@
             android:name=".Vehicul_spec"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Vehicul_spec_ai"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
