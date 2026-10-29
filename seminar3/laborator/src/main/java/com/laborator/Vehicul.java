@@ -2,7 +2,9 @@ package com.laborator;
 
 import android.text.BoringLayout;
 
-public class Vehicul {
+import java.io.Serializable;
+
+public class Vehicul implements Serializable {
     @Override
     public String toString() {
         return "Vehicul{" +

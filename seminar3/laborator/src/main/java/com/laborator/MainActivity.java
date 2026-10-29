@@ -3,6 +3,9 @@ package com.laborator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -11,7 +14,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+    private List<Vehicul> ve = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button btn = findViewById(R.id.lista_vehicule_BTN);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(), ListActivity.class);
+                it.putExtra("listaVehicule", (ArrayList<Vehicul>) ve);
+                startActivity(it);
+            }
         });
     }
 
@@ -48,9 +66,11 @@ public class MainActivity extends AppCompatActivity {
             Integer siguranta = bundle.getInt("siguranta", 0);
             Boolean inmatriculat = bundle.getBoolean("inmatriculat", false);
 
-            Vehicul v = new Vehicul(marca, eElectric, combustibil, culoare, siguranta, inmatriculat);
+            Vehicul vehicul = new Vehicul(marca, eElectric, combustibil, culoare, siguranta, inmatriculat);
 
-            Toast.makeText(this, v.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, vehicul.toString(), Toast.LENGTH_LONG).show();
+
+            ve.add(vehicul);
         }
     }
 }

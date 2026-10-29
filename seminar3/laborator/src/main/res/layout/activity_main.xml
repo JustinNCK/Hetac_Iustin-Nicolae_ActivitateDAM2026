@@ -26,4 +26,12 @@
         android:text="Adauga vehicul (Design AI)"
         android:onClick="deschideActivitateAI" />
 
+    <Button
+        android:id="@+id/lista_vehicule_BTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista vehicule"
+        />
+
+
 </LinearLayout>
