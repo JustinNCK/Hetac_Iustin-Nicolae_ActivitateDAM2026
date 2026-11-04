@@ -1,10 +1,14 @@
 package com.laborator;
 
+import android.os.Parcelable;
+import android.os.Parcel;
 import android.text.BoringLayout;
+
+import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 
-public class Vehicul implements Serializable {
+public class Vehicul implements Parcelable {
     @Override
     public String toString() {
         return "Vehicul{" +
@@ -82,4 +86,39 @@ public class Vehicul implements Serializable {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(marca);
+        dest.writeByte((byte) (esteElectric ? 1 : 0));
+        dest.writeString(combustibil);
+        dest.writeString(culoare);
+        dest.writeInt(siguranta);
+        dest.writeByte((byte) (esteInmatriculat ? 1 : 0));
+    }
+
+    protected Vehicul(Parcel in){
+        marca = in.readString();
+        esteElectric = in.readByte() != 0;
+        combustibil = in.readString();
+        culoare = in.readString();
+        siguranta = in.readInt();
+        esteInmatriculat = in.readByte() != 0;
+    }
+
+    public static final Creator<Vehicul> CREATOR = new Creator<Vehicul>() {
+        @Override
+        public Vehicul createFromParcel(Parcel in) {
+            return new Vehicul(in);
+        }
+
+        @Override
+        public Vehicul[] newArray(int size) {
+            return new Vehicul[size];
+        }
+    };
 }

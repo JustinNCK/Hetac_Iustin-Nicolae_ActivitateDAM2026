@@ -58,19 +58,25 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode == RESULT_OK && requestCode == 1){
-            Bundle bundle = data.getExtras();
-            String marca = bundle.getString("marca", "");
-            Boolean eElectric = bundle.getBoolean("eElectric", false);
-            String combustibil = bundle.getString("combustibil", "");
-            String culoare = bundle.getString("culoare", "");
-            Integer siguranta = bundle.getInt("siguranta", 0);
-            Boolean inmatriculat = bundle.getBoolean("inmatriculat", false);
+//            Bundle bundle = data.getExtras();
+//            String marca = bundle.getString("marca", "");
+//            Boolean eElectric = bundle.getBoolean("eElectric", false);
+//            String combustibil = bundle.getString("combustibil", "");
+//            String culoare = bundle.getString("culoare", "");
+//            Integer siguranta = bundle.getInt("siguranta", 0);
+//            Boolean inmatriculat = bundle.getBoolean("inmatriculat", false);
+//
+//            Vehicul vehicul = new Vehicul(marca, eElectric, combustibil, culoare, siguranta, inmatriculat);
+//
+//            Toast.makeText(this, vehicul.toString(), Toast.LENGTH_LONG).show();
+//
+//            ve.add(vehicul);
 
-            Vehicul vehicul = new Vehicul(marca, eElectric, combustibil, culoare, siguranta, inmatriculat);
-
-            Toast.makeText(this, vehicul.toString(), Toast.LENGTH_LONG).show();
-
-            ve.add(vehicul);
+            Vehicul vehicul = data.getParcelableExtra("vehicul");
+            if(vehicul != null){
+                Toast.makeText(this, vehicul.toString(), Toast.LENGTH_LONG).show();
+                ve.add(vehicul);
+            }
         }
     }
 }
